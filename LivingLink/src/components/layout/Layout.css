@@ -1,0 +1,45 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%; 
+}
+
+.main-content {
+  flex-grow: 1;
+  /* Pushes the content exactly past the fixed sidebar */
+  margin-left: var(--sidebar-width); 
+  padding: 2rem 3rem;
+  background-color: var(--bg-dark);
+  min-height: 100vh;
+  box-sizing: border-box; 
+  /* Ensures it doesn't overflow the right side of the screen */
+  width: calc(100% - var(--sidebar-width));
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile Overlay Background (Hidden on Desktop) */
+.mobile-overlay {
+  display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    /* On mobile, remove the margin because the sidebar is hidden off-screen */
+    margin-left: 0;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 90; /* Just below the sidebar (which is 100) */
+    backdrop-filter: blur(3px);
+  }
+}

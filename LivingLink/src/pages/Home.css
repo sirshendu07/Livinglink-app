@@ -1,0 +1,264 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* 1. AI Search Bar */
+.ai-search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 50px;
+  padding: 12px 20px;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ai-search-wrapper:focus-within {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-glow);
+}
+
+.ai-sparkle { margin-right: 12px; }
+.ai-search-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+}
+.ai-search-input::placeholder { color: var(--text-muted); }
+
+/* 2. Quick Action Hub */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.action-btn svg { color: var(--neon-cyan); }
+.action-btn:hover {
+  border-color: var(--neon-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.15);
+}
+
+/* 3. Main Content Split */
+.home-content-split {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 2rem;
+  align-items: stretch; /* Makes both columns equal height */
+}
+
+.section-title, .widget-title {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* --- THE GLOWING BORDER EFFECT --- */
+.glowing-border {
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glowing-border:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-glow), inset 0 0 5px rgba(0, 229, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* --- Large Notice Cards (Left Column) --- */
+.notice-card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Custom glows based on notice type */
+.urgent-glow { border-color: rgba(255, 51, 102, 0.3); }
+.urgent-glow:hover { border-color: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.4); }
+
+.info-glow { border-color: rgba(0, 229, 255, 0.3); }
+.event-glow { border-color: rgba(16, 185, 129, 0.3); }
+.event-glow:hover { border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+.notice-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.notice-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.notice-badge.urgent { background: rgba(255, 51, 102, 0.15); color: #ff3366; }
+.notice-badge.info { background: rgba(0, 229, 255, 0.15); color: var(--neon-cyan); }
+.notice-badge.event { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+
+.notice-card-title {
+  color: var(--text-main);
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.notice-text {
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.notice-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- Right Sidebar Layout (Even Distribution) --- */
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Widgets (Right Sidebar) */
+.widget-card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1; /* This makes the widgets stretch evenly! */
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-link {
+  background: transparent;
+  border: none;
+  color: var(--neon-cyan);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: auto; /* Pushes the link to the very bottom perfectly */
+  text-align: left;
+}
+
+/* Mini Community Feed */
+.mini-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mini-feed-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
+}
+.mini-feed-item:last-child { border-bottom: none; }
+
+.mini-feed-name {
+  display: block;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+.text-neon { color: var(--neon-cyan); }
+
+.mini-feed-text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Visitors List */
+.visitor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.visitor-item { display: flex; align-items: center; gap: 12px; }
+.visitor-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.visitor-info { display: flex; flex-direction: column; }
+.visitor-name { color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
+.visitor-status { font-size: 0.8rem; font-weight: 600; }
+.visitor-status.arrived { color: #10b981; }
+.visitor-status.expected { color: #f59e0b; }
+
+/* Contact Form */
+.contact-desc {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto; /* Pushes form to bottom to fill space evenly */
+}
+.form-row { display: flex; gap: 10px; }
+.glow-input {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.glow-input:focus { border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); }
+textarea.glow-input { resize: vertical; }
+.submit-btn {
+  background-color: var(--neon-cyan);
+  color: var(--bg-dark);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+.submit-btn:hover { box-shadow: 0 0 15px var(--neon-glow); transform: translateY(-2px); }
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .home-content-split { grid-template-columns: 1fr; }
+}

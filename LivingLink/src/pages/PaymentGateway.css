@@ -1,0 +1,27 @@
+.gateway-container {
+  height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
+  background: radial-gradient(circle at center, #0a0a0a 0%, var(--bg-dark) 100%);
+  position: fixed; top: 0; left: 0; z-index: 9999;
+}
+.gateway-card {
+  background-color: var(--bg-card); padding: 3rem; border-radius: 16px;
+  width: 100%; max-width: 450px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); animation: slideUp 0.4s ease;
+}
+.green-glow { border: 1px solid rgba(16, 185, 129, 0.3); }
+.green-glow:hover { border-color: #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+.gateway-header { text-align: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+.gateway-header h2 { color: #10b981; margin: 0 0 5px 0; font-size: 1.8rem; text-shadow: 0 0 10px rgba(16,185,129,0.3); }
+.gateway-header p { color: var(--text-muted); margin: 0; font-size: 0.9rem; }
+.bill-summary { text-align: center; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border: 1px dashed rgba(255,255,255,0.1); }
+.bill-summary span { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.bill-summary h3 { color: white; font-size: 2.5rem; margin: 5px 0 0 0; }
+.gateway-form { display: flex; flex-direction: column; gap: 10px; }
+.gateway-form label { color: white; font-size: 0.9rem; font-weight: 600; }
+.error-msg { color: #ff3366; font-size: 0.85rem; margin: 0; font-weight: bold; }
+.gateway-actions { display: flex; gap: 15px; margin-top: 15px; }
+.cancel-btn, .pay-btn { flex: 1; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; border: none; font-size: 1rem; transition: all 0.3s ease; }
+.cancel-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; }
+.cancel-btn:hover { background: rgba(255,255,255,0.1); }
+.pay-btn { background-color: #10b981; color: white; }
+.pay-btn:hover { background-color: #059669; box-shadow: 0 0 15px rgba(16,185,129,0.4); transform: translateY(-2px); }
+.secure-badge { text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem; }

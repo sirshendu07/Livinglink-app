@@ -1,0 +1,12 @@
+.feed-container { display: flex; flex-direction: column; gap: 1.5rem; animation: fadeIn 0.4s ease; max-width: 800px; margin: 0 auto; width: 100%;}
+.create-post-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: 12px; }
+.post-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 15px; border-radius: 8px; resize: vertical; font-family: inherit; font-size: 1rem; margin-bottom: 15px; outline: none; }
+.post-input:focus { border-color: var(--neon-cyan); }
+.post-btn { width: 100%; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; }
+.posts-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.post-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: 12px; }
+.post-header { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+.post-avatar { width: 45px; height: 45px; background: var(--neon-cyan); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem; }
+.post-author { color: white; margin: 0 0 4px 0; font-size: 1.1rem; }
+.post-time { color: var(--text-muted); font-size: 0.85rem; }
+.post-content { color: #ddd; line-height: 1.6; margin: 0; }

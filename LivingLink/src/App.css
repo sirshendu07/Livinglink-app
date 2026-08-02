@@ -1,0 +1,17 @@
+/* Temporary button style for our placeholders until we build the real components */
+.temp-btn {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.temp-btn:hover {
+  background: var(--neon-cyan-glow);
+  box-shadow: 0 0 15px var(--neon-cyan-glow);
+}

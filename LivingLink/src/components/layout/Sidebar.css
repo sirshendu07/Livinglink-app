@@ -1,0 +1,89 @@
+/* Sidebar Container */
+.sidebar {
+  width: 260px;
+  background-color: var(--bg-dark, #0a0a0a);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Brand Area */
+.sidebar-brand {
+  padding: 2rem 1.5rem;
+}
+
+.sidebar-brand h2 {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.text-neon-cyan {
+  color: #00e5ff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+/* Navigation Container */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Default Link State (Removes the purple!) */
+.sidebar-link {
+  text-decoration: none;
+  color: #888;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover State */
+.sidebar-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Active State (When you are on that page) */
+.sidebar-link.active {
+  color: #00e5ff;
+  background-color: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+/* Footer & SOS Button */
+.sidebar-footer {
+  padding: 2rem 1.5rem;
+}
+
+.sos-btn {
+  width: 100%;
+  background-color: #ff3366;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sos-btn:hover {
+  background-color: #ff0044;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+  transform: translateY(-2px);
+}
