@@ -23,7 +23,8 @@ function App() {
         {/* =========================================
             INDEPENDENT PAGES (No Sidebar)
            ========================================= */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />   
+        /*<Route path="/" element={<Navigate to="/login" replace />} />*/
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/security" element={<SecurityDashboard />} />
