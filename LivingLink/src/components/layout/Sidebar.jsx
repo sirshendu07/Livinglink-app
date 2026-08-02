@@ -8,7 +8,9 @@ const Sidebar = ({ isOpen, closeMenu }) => {
   const handleSOS = async () => {
     if (window.confirm("🚨 URGENT: Do you want to send an emergency SOS Alert to Security?")) {
       try {
-        const response = await fetch('http://localhost:5000/api/actions/sos', {
+        // Uses environment variable in production, defaults to localhost during development
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${apiUrl}/api/actions/sos`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
@@ -37,21 +39,21 @@ const Sidebar = ({ isOpen, closeMenu }) => {
       </div>
       
       <nav className="sidebar-nav">
-        <NavLink to="/home" className="sidebar-link">Home</NavLink>
-        <NavLink to="/dashboard" className="sidebar-link">Dashboard</NavLink>
-        <NavLink to="/notices" className="sidebar-link">Notice Board</NavLink>
-        <NavLink to="/feed" className="sidebar-link">Community Feed</NavLink>
-        <NavLink to="/gate" className="sidebar-link">Gate Management</NavLink>
-        <NavLink to="/maintenance" className="sidebar-link">Maintenance Bills</NavLink>
-        <NavLink to="/events" className="sidebar-link">Events Registration</NavLink>
-        <NavLink to="/gym-games" className="sidebar-link">Gym & Games</NavLink>
-        <NavLink to="/complaints" className="sidebar-link">Complaints</NavLink>
+        <NavLink to="/home" className="sidebar-link" onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/dashboard" className="sidebar-link" onClick={closeMenu}>Dashboard</NavLink>
+        <NavLink to="/notices" className="sidebar-link" onClick={closeMenu}>Notice Board</NavLink>
+        <NavLink to="/feed" className="sidebar-link" onClick={closeMenu}>Community Feed</NavLink>
+        <NavLink to="/gate" className="sidebar-link" onClick={closeMenu}>Gate Management</NavLink>
+        <NavLink to="/maintenance" className="sidebar-link" onClick={closeMenu}>Maintenance Bills</NavLink>
+        <NavLink to="/events" className="sidebar-link" onClick={closeMenu}>Events Registration</NavLink>
+        <NavLink to="/gym-games" className="sidebar-link" onClick={closeMenu}>Gym & Games</NavLink>
+        <NavLink to="/complaints" className="sidebar-link" onClick={closeMenu}>Complaints</NavLink>
       </nav>
       
       <div className="sidebar-footer">
         <ContactLinks /> 
 
-        <button className="sos-btn" style={{ marginTop: '15px' }} onClick={handleSOS}>
+        <button className="sos-btn" onClick={handleSOS}>
           ⚠️ SOS ALERT
         </button>
       </div>
