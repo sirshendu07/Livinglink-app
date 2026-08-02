@@ -17,32 +17,31 @@ const Home = () => {
         />
       </div>
 
-      {/* Quick Actions */}
-      <div className="quick-actions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1.5rem' }}>
-        
-        <div className="action-card glowing-border" onClick={() => navigate('/notices')} style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', transition: 'all 0.3s ease' }}>
-          <span className="action-icon text-neon-cyan" style={{ fontSize: '1.5rem', display: 'block', marginBottom: '10px' }}>📄</span>
-          <p style={{ margin: 0, fontWeight: 'bold' }}>Notice</p>
+      {/* Quick Actions - Structural styles moved to CSS */}
+      <div className="quick-actions-grid">
+        <div className="action-card glowing-border" onClick={() => navigate('/notices')}>
+          <span className="action-icon text-neon-cyan">📄</span>
+          <p>Notice</p>
         </div>
         
-        <div className="action-card glowing-border" onClick={() => navigate('/maintenance')} style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', transition: 'all 0.3s ease' }}>
-          <span className="action-icon text-neon-cyan" style={{ fontSize: '1.5rem', display: 'block', marginBottom: '10px' }}>💳</span>
-          <p style={{ margin: 0, fontWeight: 'bold' }}>Pay Dues</p>
+        <div className="action-card glowing-border" onClick={() => navigate('/maintenance')}>
+          <span className="action-icon text-neon-cyan">💳</span>
+          <p>Pay Dues</p>
         </div>
         
-        <div className="action-card glowing-border" onClick={() => navigate('/gym-games')} style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', transition: 'all 0.3s ease' }}>
-          <span className="action-icon text-neon-cyan" style={{ fontSize: '1.5rem', display: 'block', marginBottom: '10px' }}>🏋️</span>
-          <p style={{ margin: 0, fontWeight: 'bold' }}>Book Gym</p>
+        <div className="action-card glowing-border" onClick={() => navigate('/gym-games')}>
+          <span className="action-icon text-neon-cyan">🏋️</span>
+          <p>Book Gym</p>
         </div>
         
-        <div className="action-card glowing-border" onClick={() => navigate('/feed')} style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', transition: 'all 0.3s ease' }}>
-          <span className="action-icon text-neon-cyan" style={{ fontSize: '1.5rem', display: 'block', marginBottom: '10px' }}>💬</span>
-          <p style={{ margin: 0, fontWeight: 'bold' }}>Community Feed</p>
+        <div className="action-card glowing-border" onClick={() => navigate('/feed')}>
+          <span className="action-icon text-neon-cyan">💬</span>
+          <p>Community Feed</p>
         </div>
-        
       </div>
 
-      <div className="home-content-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
+      {/* Main Content Grid - Structural styles moved to CSS */}
+      <div className="home-content-grid">
         
         {/* Left Side: Important Notices */}
         <div className="important-notices">
@@ -85,20 +84,16 @@ const Home = () => {
         </div>
 
         {/* Help & Enquire Now Section */}
-      <div className="enquire-now-section glowing-border pink-glow" style={{ background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', marginTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-        <div>
-          <h3 style={{ color: 'white', margin: '0 0 10px 0' }}>Need Help? Enquire Now</h3>
-          <p style={{ color: 'var(--text-muted)', margin: 0 }}>Reach out to the society management office for immediate assistance.</p>
+        <div className="enquire-now-section glowing-border pink-glow">
+          <div className="enquire-text">
+            <h3 style={{ color: 'white', margin: '0 0 10px 0' }}>Need Help? Enquire Now</h3>
+            <p style={{ color: 'var(--text-muted)', margin: 0 }}>Reach out to the society management office for immediate assistance.</p>
+          </div>
+          <div className="enquire-buttons">
+            <button className="email-btn">✉️ Email Desk</button>
+            <button className="call-btn">📞 Call Office</button>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: '15px' }}>
-          <button style={{ background: 'transparent', border: '1px solid var(--neon-cyan)', color: 'var(--neon-cyan)', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer' }}>
-            ✉️ Email Desk
-          </button>
-          <button style={{ background: '#ff3366', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer' }}>
-            📞 Call Office
-          </button>
-        </div>
-      </div>
       </div>
     </div>
   );
