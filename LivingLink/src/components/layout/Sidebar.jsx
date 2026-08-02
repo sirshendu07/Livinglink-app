@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import ContactLinks from './ContactLinks';
 import './Sidebar.css'; 
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, closeMenu }) => {
   
   // Real-time SOS function linking to our backend
   const handleSOS = async () => {
@@ -30,7 +30,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       
       <div className="sidebar-brand">
         <h2>Living<span className="text-neon-cyan">Link</span></h2>
