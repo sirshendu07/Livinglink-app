@@ -87,3 +87,20 @@
   box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
   transform: translateY(-2px);
 }
+
+/* =========================================
+   MOBILE SIDEBAR TOGGLE LOGIC
+   ========================================= */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -100%; /* Hides the menu completely off the left side of the screen */
+    transition: left 0.3s ease-in-out; /* Creates the smooth sliding animation */
+    box-shadow: none;
+  }
+
+  /* The magic class React adds when you tap the 3-line button */
+  .sidebar.open {
+    left: 0; /* Slides the menu onto the screen */
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5); /* Adds a nice drop shadow over the page */
+  }
+}
